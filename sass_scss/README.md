@@ -1,5 +1,5 @@
 # Sass & Scss
-## Project for Atlas School
+Project for Atlas School
 
 ## Description
 This project is intended to serve as an introduction to Sass & Scss, by providing a variety of simple exercises designed to teach the basics of Sass & Scss.
