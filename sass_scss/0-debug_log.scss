@@ -1,0 +1,8 @@
+/* Write a Sass file that prints Hello world in the debug output. */
+body {
+    .container {
+        color: #3D3D3D;
+    }
+}
+
+@debug "Hello world";
