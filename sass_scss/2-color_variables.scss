@@ -1,1 +1,20 @@
-/* My style */
+/* Write a Sass file that assigns:
+
+The text color #3D3D3D to the HTML tags body and p
+The background color #6D6D6D to the HTML tags body and h2
+You must use 2 Sass variables */
+$textColor: #3D3D3D;
+$bgColor: #6D6D6D;
+
+body {
+    color: $textColor;
+    background-color: $bgColor;
+}
+
+p {
+    color: $textColor;
+}
+
+h2 {
+    background-color: $bgColor;
+}
