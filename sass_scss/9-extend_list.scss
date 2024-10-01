@@ -1,1 +1,22 @@
-/* My style */
+/* Write a Sass file that assigns:
+
+Font size 12px to all tags of class .info
+Text color #00FF00 to all tags of class .success and extend style of the class .info
+Text color #FF0000 to all tags of class .warning and extend style of the class .info */
+%infoBase {
+    font-size: 12px;
+}
+
+.info {
+    @extend %infoBase;
+}
+
+.success {
+    @extend %infoBase;
+    color: #00FF00;
+}
+
+.warning {
+    @extend %infoBase;
+    color: #FF0000;
+}
