@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JavaScript with Alert on Button Click</title>
+</head>
+<body>
+    <button id="welcome">0-welcome.js</button>
+
+    <script>
+        function welcome(firstName, lastName) {
+            let fullName = firstName + " " + lastName;
+
+            function displayFullName() {
+                alert("Welcome " + fullName + "!");
+            };
+            displayFullName();
+        }
+
+        document.getElementById("welcome").addEventListener("click", function() {
+            welcome('Holberton', 'School');
+        });
+    </script>
+</body>
+</html>
