@@ -7,8 +7,10 @@
 </head>
 <body>
     <button id="welcome">0-welcome.js</button>
+    <button id="nested">1-nested_functions.js</button>
 
     <script>
+        /*0-welcome*/
         function welcome(firstName, lastName) {
             let fullName = firstName + " " + lastName;
 
@@ -21,6 +23,32 @@
         document.getElementById("welcome").addEventListener("click", function() {
             welcome('Holberton', 'School');
         });
+
+        /*1-nested_functions*/
+        let globalVariable = "Welcome";
+
+        function outer() {
+            alert(globalVariable);
+            let course = "Holberton"
+
+            function inner() {
+                alert(globalVariable + " " + course);
+                let exclamation = "!";
+
+                function inception() {
+                    alert(globalVariable + " " + course + exclamation);
+                };
+
+                inception();
+            };
+
+            inner();
+        };
+
+        document.getElementById("nested").addEventListener("click", function() {
+            outer();
+        });
+
     </script>
 </body>
 </html>
