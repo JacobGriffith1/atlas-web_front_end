@@ -9,6 +9,7 @@
     <button id="welcome">0-welcome.js</button>
     <button id="nested">1-nested_functions.js</button>
     <button id="welcomeMssg">2-function_me.js</button>
+    <button id="classrooms">3-classrooms.js</button>
 
     <script>
         /*0-welcome*/
@@ -68,6 +69,30 @@
             guillaume();
             alex();
             fred();
+        });
+
+        /*3-classrooms.js*/
+        function createClassRoom(numbersOfStudents) {
+            function studentSeat(seat) {
+                return function() {
+                    return seat;
+                };
+            };
+
+            let students = [];
+            for (let i = 0; i < numbersOfStudents; i++) {
+                students[i] = studentSeat(i + 1);
+            };
+
+            return students;
+        };
+
+        let classRoom = createClassRoom(10);
+
+        document.getElementById("classrooms").addEventListener("click", function() {
+            alert(classRoom[0]());
+            alert(classRoom[3]());
+            alert(classRoom[9]());
         });
 
     </script>
