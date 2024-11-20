@@ -8,6 +8,7 @@
 <body>
     <button id="welcome">0-welcome.js</button>
     <button id="nested">1-nested_functions.js</button>
+    <button id="welcomeMssg">2-function_me.js</button>
 
     <script>
         /*0-welcome*/
@@ -47,6 +48,26 @@
 
         document.getElementById("nested").addEventListener("click", function() {
             outer();
+        });
+
+        /*2-function_me*/
+        function welcomeMessage(fullName) {
+            let mssg = "Welcome ";
+
+            return function() {
+                alert(mssg + fullName);
+            };
+        };
+
+        
+        let guillaume = welcomeMessage("Guillaume");
+        let alex = welcomeMessage("Alex");
+        let fred = welcomeMessage("Fred");
+
+        document.getElementById("welcomeMssg").addEventListener("click", function() {
+            guillaume();
+            alex();
+            fred();
         });
 
     </script>
