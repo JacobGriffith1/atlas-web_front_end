@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test JavaScript</title>
 </head>
-<body>
+<body style="font-family: Arial, Helvetica, sans-serif">
     <button id="welcome">0-welcome.js</button>
     <button id="nested">1-nested_functions.js</button>
     <button id="welcomeMssg">2-function_me.js</button>
     <button id="classrooms">3-classrooms.js</button>
     <button id="math">4-math.js</button>
+    <h3>5-mode.js</h3>
+    <div>
+        <button id="spooky">Spooky</button>
+        <button id="dark">Dark mode</button>
+        <button id="scream">Scream mode</button>
+        <h1>Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <h4>Header 4</h4>
+        <h5>Header 5</h5>
+        <h6>Header 6</h6>
+    </div>
 
     <script>
         /*0-welcome*/
@@ -72,7 +84,7 @@
             fred();
         });
 
-        /*3-classrooms.js*/
+        /*3-classrooms*/
         function createClassRoom(numbersOfStudents) {
             function studentSeat(seat) {
                 return function() {
@@ -96,7 +108,7 @@
             alert(classRoom[9]());
         });
 
-        /*4-math.js*/
+        /*4-math*/
         function divideBy(firstNumber) {
             return function(secondNumber) {
                 return (secondNumber / firstNumber);
@@ -120,6 +132,37 @@
             alert(divideBy100(200));
             alert(addBy1000(20));
         });
+
+        /*5-mode*/
+        function changeMode(size, weight, transform, background, color) {
+            return function() {
+                document.body.style.fontSize = size + 'px';
+                document.body.style.fontWeight = weight;
+                document.body.style.textTransform = transform;
+                document.body.style.backgroundColor = background;
+                document.body.style.color = color;
+            };
+        };
+
+        function main() {
+            let spooky = changeMode(9, "bold", "uppercase", "pink", "green");
+            let darkMode = changeMode(12, "bold", "capitalize", "black", "white");
+            let screamMode = changeMode(12, "normal", "lowercase", "white", "black");
+
+            document.getElementById("spooky").addEventListener("click", function() {
+                spooky();
+            });
+            
+            document.getElementById("dark").addEventListener("click", function() {
+                darkMode();
+            });
+
+            document.getElementById("scream").addEventListener("click", function() {
+                screamMode();
+            });
+        }
+
+        main();
 
     </script>
 </body>
