@@ -10,6 +10,7 @@
     <button id="nested">1-nested_functions.js</button>
     <button id="welcomeMssg">2-function_me.js</button>
     <button id="classrooms">3-classrooms.js</button>
+    <button id="math">4-math.js</button>
 
     <script>
         /*0-welcome*/
@@ -93,6 +94,31 @@
             alert(classRoom[0]());
             alert(classRoom[3]());
             alert(classRoom[9]());
+        });
+
+        /*4-math.js*/
+        function divideBy(firstNumber) {
+            return function(secondNumber) {
+                return (secondNumber / firstNumber);
+            };
+        };
+
+        function addBy(firstNumber) {
+            return function(secondNumber) {
+                return (secondNumber + firstNumber);
+            };
+        };
+
+        let addBy100 = addBy(100);
+        let addBy1000 = addBy(1000);
+        let divideBy10 = divideBy(10);
+        let divideBy100 = divideBy(100);
+
+        document.getElementById("math").addEventListener("click", function() {
+            alert(addBy100(20));
+            alert(divideBy10(20));
+            alert(divideBy100(200));
+            alert(addBy1000(20));
         });
 
     </script>
