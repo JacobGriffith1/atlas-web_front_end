@@ -23,6 +23,7 @@
         <h5>Header 5</h5>
         <h6>Header 6</h6>
     </div>
+    <button id="hogwarts">6-hogwarts.js</button>
 
     <script>
         /*0-welcome*/
@@ -163,6 +164,51 @@
         }
 
         main();
+
+        /*6-hogwarts*/
+        class studentHogwarts {
+            constructor() {
+                let privateScore = 0;
+                let name = null;
+
+                function changeScoreBy(points) {
+                    privateScore += points;
+                }
+
+                return {
+                    setName(newName) {
+                        name = newName;
+                    },
+                    rewardStudent() {
+                        changeScoreBy(1);
+                    },
+                    penalizeStudent() {
+                        changeScoreBy(-1);
+                    },
+                    getScore() {
+                        return name + ": " + privateScore;
+                    }
+                }
+            }
+        }
+
+        let harry = new studentHogwarts();
+        harry.setName("Harry");
+        for (let i = 0; i < 4; i++) {
+            harry.rewardStudent();
+        };
+
+        let draco = new studentHogwarts();
+        draco.setName("Draco");
+        draco.rewardStudent();
+        for (let i = 0; i < 3; i++){
+            draco.penalizeStudent();
+        };
+
+        document.getElementById("hogwarts").addEventListener("click", function() {
+            alert(harry.getScore());
+            alert(draco.getScore());
+        });
 
     </script>
 </body>
