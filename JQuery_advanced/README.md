@@ -53,11 +53,11 @@ Remove the function createTextElement
 
 Create a function named createFamilyTree:
 - It should create a table element
-* The head of the table should display Firstname and Lastname in two cells
-* The body of the table should three rows
-* The first row should contain two cells with Guillaume and Salva
-* The second row should contain two cells with Paulette and Salva
-* The third row should contain two cells with Antoine and Salva
+    - The head of the table should display Firstname and Lastname in two cells
+    - The body of the table should three rows
+    - The first row should contain two cells with Guillaume and Salva
+    - The second row should contain two cells with Paulette and Salva
+    - The third row should contain two cells with Antoine and Salva
 - Use the keyword append only once to attach all the elements of the table to the page
 
 Call the createFamilyTree function
