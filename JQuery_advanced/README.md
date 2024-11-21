@@ -39,6 +39,7 @@ When the page is being loaded, verify that jQuery is loaded correctly
 In a file 1-index.html, reuse the template you created previously.
 
 Remove the code that verifies jQuery loaded and logs messages to the console
+
 Create a function named createTextElement:
 - Within the function, create a p HTML element
 - The paragraph should display Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in diam risus. Nunc sit amet euismod ipsum. Aenean tempus ex sed est volutpat, sed sodales velit tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin auctor sollicitudin eleifend. Vivamus porta enim vitae mauris commodo, vitae tempor tellus elementum. Quisque sed pellentesque nulla, at eleifend nisi. Phasellus eget tincidunt ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -49,6 +50,7 @@ Call the createTextElement function
 In a file 2-index.html, reuse the template you created previously.
 
 Remove the function createTextElement
+
 Create a function named createFamilyTree:
 - It should create a table element
 * The head of the table should display Firstname and Lastname in two cells
@@ -57,6 +59,7 @@ Create a function named createFamilyTree:
 * The second row should contain two cells with Paulette and Salva
 * The third row should contain two cells with Antoine and Salva
 - Use the keyword append only once to attach all the elements of the table to the page
+
 Call the createFamilyTree function
 
 ## Learning Objectives
