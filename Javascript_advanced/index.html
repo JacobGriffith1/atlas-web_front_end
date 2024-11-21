@@ -29,6 +29,7 @@
     <button id="primeTime">9-prime.js</button>
     <button id="primerTime">10-prime.js</button>
     <button id="primestTime">11-prime.js</button>
+    <button id="area">12-room_area.js</button>
 
     <script>
         /*0-welcome*/
@@ -306,6 +307,22 @@
             let end = performance.now();
             console.log("Execution time of printing countPrimeNumbers was " + (end - begin) + " milliseconds.");
             alert("See console for results.");
+        });
+
+        /*12-room_area*/
+        let roomDimensions = {
+            width: 50,
+            length: 100,
+            getArea() {
+                return this.width * this.length;
+            }
+        };
+
+        let boundGetArea = roomDimensions.getArea.bind(roomDimensions);
+        
+        document.getElementById("area").addEventListener("click", function() {
+            console.log(boundGetArea());
+            alert("boundGetArea = " + boundGetArea());
         });
 
     </script>
