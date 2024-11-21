@@ -145,6 +145,27 @@ In a file 7-index.html, reuse the template you created in the previous task
     - For each result returned by the API, call the function addNewArticle with the result’s pageid, title, and snippet
 - Call the function createSearchForm when the page loads
 
+### 9. Pagination
+In a file 8-index.html, reuse the code from the previous task
+
+- Modify the function createSearchForm:
+
+    - It should append to the body another list, with the id pagination
+- Modify the function queryWikipedia:
+
+    - Add a new parameter named offset(number)
+    - By default, the offset should be set to 0
+    - Modify the data object to add the offset
+    - When you receive the response from the API, call the function buildPagination that you are going to create below
+- Create a new function named buildPagination:
+
+    - It accepts three arguments numberOfItems(number), itemsPerPage(number), and currentOffset(number)
+    - When the function is called, reset the pagination list to an empty tag
+    - Write a loop that will display the pagination (using the total number of items divided by the number of items per page)
+    - For each page, create a list item
+        - Add some CSS for each item (cursor: 'pointer', 10px margin left, and bold when this is the current page)
+        - The text of the item should be the page number
+        - When clicking on a page number, it should call the function queryWikipedia with the right offset
 
 ## Learning Objectives
 - Learn how to load jQuery from a CDN in a page
