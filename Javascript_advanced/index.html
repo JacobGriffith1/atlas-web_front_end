@@ -11,19 +11,7 @@
     <button id="welcomeMssg">2-function_me.js</button>
     <button id="classrooms">3-classrooms.js</button>
     <button id="math">4-math.js</button>
-    <h3>5-mode.js</h3>
-    <div>
-        <h1>Welcome Atlas!</h1>
-        <button id="spooky">Spooky</button>
-        <button id="dark">Dark mode</button>
-        <button id="scream">Scream mode</button>
-        <h1>Header 1</h1>
-        <h2>Header 2</h2>
-        <h3>Header 3</h3>
-        <h4>Header 4</h4>
-        <h5>Header 5</h5>
-        <h6>Header 6</h6>
-    </div>
+    <button id="mode">5-mode.js</button>
     <button id="hogwarts">6-hogwarts.js</button>
     <button id="timeout">7-timeout.js</button>
     <button id="payment">8-payments.js</button>
@@ -160,16 +148,23 @@
             let darkMode = changeMode(12, "bold", "capitalize", "black", "white");
             let screamMode = changeMode(12, "normal", "lowercase", "white", "black");
 
-            document.getElementById("spooky").addEventListener("click", function() {
-                spooky();
-            });
-            
-            document.getElementById("dark").addEventListener("click", function() {
-                darkMode();
-            });
+            const paragraph = document.createElement("p");
+            paragraph.innerHTML = "On March 10, 1983, Scrappy Doo was gunned down in the streets of Brazil by a rival drug cartel."
+            const spookyBtn = document.createElement("button");
+            spookyBtn.innerHTML = "Spooky";
+            spookyBtn.onclick = function () {spooky();};
+            const darkBtn = document.createElement("button");
+            darkBtn.innerHTML = "Dark mode";
+            darkBtn.onclick = function () {darkMode();};
+            const screamBtn = document.createElement("button");
+            screamBtn.innerHTML = "Scream mode";
+            screamBtn.onclick = function () {screamMode();;}
 
-            document.getElementById("scream").addEventListener("click", function() {
-                screamMode();
+            document.getElementById("mode").addEventListener("click", function() {
+                document.body.appendChild(paragraph);
+                document.body.appendChild(spookyBtn);
+                document.body.appendChild(darkBtn);
+                document.body.appendChild(screamBtn);
             });
         }
 
