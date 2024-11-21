@@ -27,6 +27,7 @@
     <button id="timeout">7-timeout.js</button>
     <button id="payment">8-payments.js</button>
     <button id="primeTime">9-prime.js</button>
+    <button id="primerTime">10-prime.js</button>
 
     <script>
         /*0-welcome*/
@@ -255,7 +256,7 @@
             alert("See console for results.");
         });
 
-        /*9-prime*/
+        /*9-prime / 10-prime*/
         function countPrimeNumbers() {
             let prime = true;
             let pCount = 0;
@@ -279,6 +280,16 @@
         document.getElementById("primeTime").addEventListener("click", function() {
             let begin = performance.now();
             countPrimeNumbers();
+            let end = performance.now();
+            console.log("Execution time of printing countPrimeNumbers was " + (end - begin) + " milliseconds.");
+            alert("See console for results.");
+        });
+
+        document.getElementById("primerTime").addEventListener("click", function() {
+            let begin = performance.now();
+            for (let i = 0; i <= 99; i++) {
+                countPrimeNumbers();
+            }
             let end = performance.now();
             console.log("Execution time of printing countPrimeNumbers was " + (end - begin) + " milliseconds.");
             alert("See console for results.");
