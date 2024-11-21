@@ -4,6 +4,10 @@ Project for Atlas School
 ## Description
 "Javascript Advanced (Max's Version)" features a barebones index with a selection of buttons that execute various Javascript functions. Alerts have been used in additon to console logging to make the actual results of button clicks more apparent.
 
+## Tasks
+
+### 0. Readme
+Write a good, substantial README.md!
 
 ### 1. Lexical scoping and welcome message
 Create a function named welcome:
