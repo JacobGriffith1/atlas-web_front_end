@@ -26,6 +26,7 @@
     <button id="hogwarts">6-hogwarts.js</button>
     <button id="timeout">7-timeout.js</button>
     <button id="payment">8-payments.js</button>
+    <button id="primeTime">9-prime.js</button>
 
     <script>
         /*0-welcome*/
@@ -208,8 +209,9 @@
         };
 
         document.getElementById("hogwarts").addEventListener("click", function() {
-            alert(harry.getScore());
-            alert(draco.getScore());
+            console.log(harry.getScore());
+            console.log(draco.getScore());
+            alert("See console for results.");
         });
 
         /*7-timeout*/
@@ -250,6 +252,35 @@
 
         document.getElementById("payment").addEventListener("click", function() {
             paymentStart();
+            alert("See console for results.");
+        });
+
+        /*9-prime*/
+        function countPrimeNumbers() {
+            let prime = true;
+            let pCount = 0;
+
+            for (let i = 2; i <= 100; i++) {
+                prime = true;
+                let sqrt = Math.round(Math.sqrt(i));
+                for (let div = 2; div <= sqrt; div++) {
+                    if (i % div == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+                if (prime){
+                    pCount++;
+                }
+            }
+            return pCount;
+        }
+
+        document.getElementById("primeTime").addEventListener("click", function() {
+            let begin = performance.now();
+            countPrimeNumbers();
+            let end = performance.now();
+            console.log("Execution time of printing countPrimeNumbers was " + (end - begin) + " milliseconds.");
             alert("See console for results.");
         });
 
