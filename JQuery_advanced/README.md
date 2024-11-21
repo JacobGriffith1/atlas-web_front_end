@@ -62,6 +62,90 @@ Create a function named createFamilyTree:
 
 Call the createFamilyTree function
 
+### 4. Chain DOM elements
+In a file 3-index.html, reuse the template you created previously. Reuse also the function named createFamilyTree:
+
+- The table is containing the exact same values as the previous task
+- This time, create each element one by one
+- Use the keywords append for each element and text for the cells
+- Do not create any intermediate variable
+- Call the createFamilyTree function
+
+### 5. HTML function
+In a file 4-index.html, reuse the template you created in the previous task. Reuse also the function named createFamilyTree.
+
+- Create a new function replaceFamilyTree:
+    - It should replace the children of the tbody elements with a new tr
+    - The tr element should contain two cells with Gerard and Bonissa in each
+- Make sure createFamilyTree and replaceFamilyTree are called
+
+### 6. Click attribute and remove function
+In a file 5-index.html, reuse the template you created previously.
+
+- Remove the createFamilyTree and replaceFamilyTree functions
+- Create a function createFamilyTree:
+    - It should append to the body an empty table, with thead and two cells with text Firstname and Lastname, respectively
+    - It should append an empty tbody element to the table after the thead
+- Create a function addNewMember:
+    - It accepts two arguments firstName(string) and lastName(string)
+    - It appends to the body of the table a new row with three cells
+    - The first cell displays the firstName, the second cell displays the lastName
+    - The third cell displays (x)
+    - On click on the third cell, it should remove the row
+    - Add CSS to the third cell to have an orange background
+- Calls the function createFamilyTree
+- Using addNewMember, generate a fake table with:
+    - the first row Guillaume, Salva
+    - the second row Arielle, Snizt
+    - the third row Fanette, Snizt
+    - the fourth row Gerard, Snizt
+    - the fifth row Victor, Salva
+
+### 7. Val, before, and prepend functions
+In a file 6-index.html, reuse the template you created previously.
+
+- Reuse the function createFamilyTree you wrote in the previous task
+- Reuse the function addNewMember you wrote in the previous task, and add the following modification:
+    - The function should accept a new argument position(string)
+    - When position is equal to before, it should add the row at the top of the table
+    - Otherwise, it should add the row at the bottom of the table
+- Write a function createForm:
+    - It should add before the table two input of type text
+    - It should add a select with two options as well: before and after with corresponding Before and After text
+    - It should add an input of type submit as well
+        - When the user clicks on the submit, it should call the function addNewMember with the value of the two inputs and the value of the select element
+- Call the function createFamilyTree
+- Call the function createForm
+
+### 8. Query - Setup your dev environment
+In a file 7-index.html, reuse the template you created in the previous task
+
+- Remove the functions from the script
+- Import jQuery using the CDN and make sure you can access the ajax methods
+
+- Create a form:
+
+    - Create a function createSearchForm, it should append to the body:
+        - An empty input of type text without ID, name, or class
+        - An input of type submit
+            - When the user clicks on the submit button, it should query the function queryWikipedia that you are going to create with the value of the text input
+        - An empty ul element
+- Create a function addNewArticle to add new items to a list
+
+    - It accepts three arguments id(string), title(string), and snippet(string)
+    - It create an element li
+        - Within the li, add two paragraph elements
+            - The first paragraph contains a span tag with the following text: id -, then a b element with the title
+            - The second paragraph, should contain the snippet
+    - Appends the li to the ul element (created by createSearchForm)
+- Implement a get function: create a function queryWikipedia
+
+    - It accepts one argument search(string)
+    - Create a data object with attributes required to query a search using the string passed in the argument with Wikipedia
+    - For each result returned by the API, call the function addNewArticle with the result’s pageid, title, and snippet
+- Call the function createSearchForm when the page loads
+
+
 ## Learning Objectives
 - Learn how to load jQuery from a CDN in a page
 - Learn the different ways to create DOM elements with jQuery
