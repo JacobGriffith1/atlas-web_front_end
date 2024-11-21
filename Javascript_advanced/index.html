@@ -25,6 +25,7 @@
     </div>
     <button id="hogwarts">6-hogwarts.js</button>
     <button id="timeout">7-timeout.js</button>
+    <button id="payment">8-payments.js</button>
 
     <script>
         /*0-welcome*/
@@ -227,6 +228,31 @@
             timeoutStart();
             alert("See console for results.");
         });
+
+        /*8-payments*/
+        function paymentStart() {
+            function processPayment(amount) {
+                console.log("Collecting payment of " + amount);
+            }
+
+            function processOrder(orderId, amount) {
+                console.log(orderId + " is being processed");
+                processPayment(amount);
+                console.log(orderId + " has been fully processed");
+            }
+
+            console.log("Processing orders");
+            processOrder(12321, 10.99);
+            processOrder(12322, 12.99);
+            processOrder(12323, 15.00);
+            console.log("All the orders have been processed");
+        };
+
+        document.getElementById("payment").addEventListener("click", function() {
+            paymentStart();
+            alert("See console for results.");
+        });
+
 
     </script>
 </body>
