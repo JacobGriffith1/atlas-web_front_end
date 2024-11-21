@@ -139,8 +139,8 @@ Logs to the console All the orders have been processed
 ### 10. Prime numbers & timing execution
 Write a function named countPrimeNumbers:
 
--It will return the number of prime numbers from 2 to 100
--Log to the console the time in milliseconds to execute the function in this format: Execution time of printing countPrimeNumbers was <time used> milliseconds.
+- It will return the number of prime numbers from 2 to 100
+- Log to the console the time in milliseconds to execute the function in this format: Execution time of printing countPrimeNumbers was <time used> milliseconds.
 
 ### 11. Execution stack & timing execution
 Reuse the function countPrimeNumbers from 9-prime.js (copy/paste)
