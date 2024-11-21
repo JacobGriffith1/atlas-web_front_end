@@ -30,6 +30,7 @@
     <button id="primerTime">10-prime.js</button>
     <button id="primestTime">11-prime.js</button>
     <button id="area">12-room_area.js</button>
+    <button id="user">13-bind_user.js</button>
 
     <script>
         /*0-welcome*/
@@ -324,6 +325,31 @@
             console.log(boundGetArea());
             alert("boundGetArea = " + boundGetArea());
         });
+
+        /*13-bind_user*/
+        let user = {
+            hobby: "Calligraphy",
+            favoriteSport: "Hockey",
+            astrologicalSign: "Aries",
+            firstName: "Guillaume",
+            lastName: "Johns",
+            location: "Netherlands",
+            occupation: "Engineer",
+        };
+
+        function logWelcomeUser(welcomeString) {
+            console.log(welcomeString + ", " + user.firstName + ". Your occupation is: " + user.occupation + ".");
+        }
+
+        let bindLogWelcomeUser = logWelcomeUser.bind(user);
+        
+        document.getElementById("user").addEventListener("click", function() {
+            bindLogWelcomeUser("Welcome");
+            alert("See console for results.");
+        });
+
+        /*14-wikipedia*/
+        
 
     </script>
 </body>
