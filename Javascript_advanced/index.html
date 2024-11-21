@@ -24,6 +24,7 @@
         <h6>Header 6</h6>
     </div>
     <button id="hogwarts">6-hogwarts.js</button>
+    <button id="timeout">7-timeout.js</button>
 
     <script>
         /*0-welcome*/
@@ -208,6 +209,23 @@
         document.getElementById("hogwarts").addEventListener("click", function() {
             alert(harry.getScore());
             alert(draco.getScore());
+        });
+
+        /*7-timeout*/
+        function timeoutStart() {
+            console.log("Start of the execution queue");
+            setTimeout(function() {
+                console.log("Final code block to be executed");
+            }, 0);
+            for (let i = 1; i <= 100; i++){
+                console.log(i);
+            }
+            console.log("End of the loop printing");
+        };
+
+        document.getElementById("timeout").addEventListener("click", function() {
+            timeoutStart();
+            alert("See console for results.");
         });
 
     </script>
