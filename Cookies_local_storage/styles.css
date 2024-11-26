@@ -4,3 +4,9 @@
     border-color: #809585;
     border-width: 1px;
 }
+
+.logout {
+    font-weight: normal;
+    font-style: italic;
+    margin-left: 10px;
+}
