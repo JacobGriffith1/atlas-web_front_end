@@ -1,4 +1,18 @@
-/** setCookies */
+/** setCookiesAndShowWelcomeMessage */
+function setCookiesAndShowWelcomeMessage(event) {
+    event.preventDefault();
+
+    const firstName = document.querySelector("#firstname").value;
+    const email = document.querySelector("#email").value;
+
+    if (firstName && email) {
+        Cookies.set("firstname", firstName, {expires: 10, path: `/`});
+        Cookies.set("email", email, {expires: 10, path: `/`});
+    }
+    showWelcomeMessageOrForm();
+}
+
+/** setCookies | unused as of task 5 */
 function setCookies(event) {
     event.preventDefault();
 
@@ -14,7 +28,7 @@ function setCookies(event) {
     /** function added for task 4 */
 }
 
-/** showCookies */
+/** showCookies | unused as of task 4*/
 function showCookies() {
     const cookies = document.cookie;
     const paragraph = document.createElement("p");
@@ -23,7 +37,7 @@ function showCookies() {
     document.body.appendChild(paragraph);
 }
 
-/** getCookie */
+/** getCookie | unused as of task 5 */
 function getCookie(name) {
     const cookies = document.cookie.split("; ");
     for (let i = 0; i < cookies.length; i++) {
@@ -49,6 +63,9 @@ function hideForm() {
 
 /** deleteCookiesAndShowForm */
 function deleteCookiesAndShowForm() {
+    Cookies.remove("firstname");
+    Cookies.remove("email");
+    /** replaced with jscookie in task 5
     let date = new Date();
     date.setTime(date.getTime() - 1);
 
@@ -56,17 +73,19 @@ function deleteCookiesAndShowForm() {
     document.cookie = `email=; expires=${date.toUTCString()}; path=/`;
     
     console.log("Cookies:", document.cookie);
+    */
     showForm();
 }
 
 /** showWelcomeMessageOrForm */
 function showWelcomeMessageOrForm() {
-     if (!document.cookie || !getCookie("firstname") || !getCookie("email")) {
+     if (!document.cookie || !Cookies.get("firstname") || !Cookies.get("email")) {
+        /**(!document.cookie || !getCookie("firstname") || !getCookie("email")) { <===== LINE ALTERED IN TASK 5*/
         showForm();
     } else {
         const welcome = document.createElement("div");
         welcome.setAttribute("id", "welcomeMsg");
-        welcome.innerHTML = `<h1>Welcome: ${getCookie("firstname")} <a class="logout" onclick="deleteCookiesAndShowForm(event)">(logout)</a></h1>`;
+        welcome.innerHTML = `<h1>Welcome: ${Cookies.get("firstname")} <a class="logout" onclick="deleteCookiesAndShowForm(event)">(logout)</a></h1>`;
         document.body.appendChild(welcome);
         hideForm();
     }
