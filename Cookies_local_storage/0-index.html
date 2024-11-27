@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cookies and Local Storage (Max's Version) | Jacob Griffith</title>
         <link rel="stylesheet" href="styles.css">
-        <script type="text/javascript" src="src/index.js"></script>
     </head>
     <body>
         <h1>Login to the website</h1>
@@ -16,5 +15,22 @@
         </form>
         <h1>Cookies</h1>
         <button onclick="showCookies()" class="button-1">Show the cookies</button>
+        <script>/** setCookies */
+            function setCookies() {
+                const firstName = document.querySelector("#firstname").value;
+                const email = document.querySelector("#email").value;
+            
+                document.cookie = `firstname=${firstName}`;
+                document.cookie = `email=${email}`;
+            }
+            
+            /** showCookies */
+            function showCookies() {
+                const cookies = document.cookie;
+                const paragraph = document.createElement("p");
+                paragraph.innerHTML = `Cookies: ${cookies}`;
+                document.body.appendChild(paragraph);
+            }
+        </script>
     </body>
 </html>
