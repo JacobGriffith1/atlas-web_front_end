@@ -1,9 +1,13 @@
-/**--------------------TASK 6--------------------*/
+/**--------------------TASK 6, 7--------------------*/
+/** 
+ * all instances of localStorage are replaced with
+ * sessionStorage as of task 7.
+ */
 
 const availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
 
 function addItemToCart(item){
-    window.localStorage.setItem(item, true);
+    window.sessionStorage.setItem(item, true);
     displayCart();
 }
 
@@ -22,7 +26,7 @@ function createStore(){
 }
 
 function displayCart(){
-    if (window.localStorage.length){
+    if (window.sessionStorage.length){
         let msg = document.querySelector('#cartMsg');
 
         if (!msg){
@@ -30,15 +34,17 @@ function displayCart(){
             msg.setAttribute('id', 'cartMsg');
             document.body.appendChild(msg);
         }
-        msg.innerHTML = `You previously had ${window.localStorage.length} items in your cart`
+        if (window.sessionStorage.length > 1){
+            msg.innerHTML = `You previously had ${window.sessionStorage.length - 1} items in your cart`
+        }
     }
 }
 
 window.onload = function(){
-    if (!window.localStorage){
+    if (!window.sessionStorage){
         window.alert("Sorry, your browser does not support Web storage. Try again with a better one")
     } else {
-        console.log("localStorage exists")
+        console.log("sessionStorage exists")
         createStore();
         displayCart();
     }
