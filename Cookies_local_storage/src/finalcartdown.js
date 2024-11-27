@@ -49,9 +49,73 @@ function createStore(){
     }
 }
 
-function displayCart(){}
+function displayCart(){
+    let cart = document.querySelector('#cart')
+    if (!cart){
+        cart = document.createElement('h2');
+        cart.setAttribute('id', 'cart');
+        cart.innerHTML = 'Your cart:';
+        document.body.appendChild(cart);
+    }
 
-function updateCart(){}
+    let trolley = document.querySelector('#trolley');
+    if (!trolley){
+        trolley = document.createElement('div');
+        trolley.setAttribute('id', 'trolley');
+        document.body.appendChild(trolley);
+    } else {
+        trolley.innerHTML = '';
+    }
+
+    updateCart();
+}
+
+function updateCart(){
+    const cart = getCartFromStorage();
+    const trolley = document.querySelector('#trolley');
+    const merch = document.createElement('ul');
+    let empty = document.querySelector('#empty');
+    let clear = document.querySelector('#clear');
+    trolley.appendChild(merch);
+
+    if (!empty){
+        empty = document.createElement('li');
+        empty.setAttribute('id', 'empty');
+        empty.innerHTML = 'Your cart is empty';
+        merch.appendChild(empty);
+    }
+    if (!clear){
+        clear = document.createElement('li');
+        clear.setAttribute('id', 'clear');
+        clear.innerHTML = 'Clear my cart';
+        clear.style.display = 'none';
+        clear.addEventListener('click', clearCart);
+        merch.appendChild(clear);
+    }
+
+    if (!Object.keys(cart).length){
+        empty.style.display = 'list-item';
+        clear.style.display = 'none';
+    } else {
+        empty.style.display = 'none';
+        clear.style.display = 'list-item';
+        for (const item in cart){
+            const cartList = document.createElement('li');
+            const remove = document.createElement('span');
+
+            cartList.setAttribute('id', item);
+            cartList.innerHTML = `${item} x ${cart[item]}`;
+
+            remove.innerHTML = '(remove)';
+            remove.addEventListener('click', function(){
+                removeItemFromCart(this.parentElement.id);
+            });
+
+            cartList.appendChild(remove);
+            merch.appendChild(cartList);
+        }
+    }
+}
 
 window.onload = function(){
     if (!window.sessionStorage){
