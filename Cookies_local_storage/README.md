@@ -2,7 +2,12 @@
 Project for Atlas School
 
 ## Description
+This project contains a variety of tasks designed to introduce the student to cookies and local storage. 
+The tasks can be broken up into two categories:
+- Login screen: An exercise in cookies
+- Shopping cart: An exercise in local/session storage
 
+The tasks can be viewed below for context.
 
 ## Tasks
 
